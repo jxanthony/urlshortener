@@ -1,2 +1,39 @@
-<h1>UrlShortener#index</h1>
-<p>Find me in app/views/url_shortener/index.html.erb</p>
+<div class="container">
+	<br>
+	<br>
+	<form class="form-horizontal" action="/home" method="POST">
+		<div class="form-group">
+		<label for="url_input" class="col-sm-2 control-label">Shrink new URL?</label>
+		<div class="col-sm-10">
+			<input type="url" class="form-control" id="url_input" name="url_input" placeholder="http://www.google.com">
+		</div>
+		</div>
+		<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-primary" value="Shorten">Enter</button>
+		</div>
+		</div>
+	</form>
+	<br>
+	<br>
+	<table class="table table-hover">
+		<tr>
+			<td> Shorten ID </td>
+			<td> URL </td>
+			<td> Clicked Count </td>
+		</tr>
+		<%# @ary.each do |row| %>
+			<tr>
+				<td>
+				<%#= row.id.to_s %>
+				</td>
+				<td>
+					<a href=<%#= row.url.to_s %>><%#= row.url.to_s %></a>
+				</td>
+				<td>
+				<%#= row.click_count.to_s %>
+				</td>
+			</tr>
+		<%# end %>
+	</table>
+</div>
