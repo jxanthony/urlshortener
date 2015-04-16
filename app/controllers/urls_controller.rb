@@ -1,4 +1,4 @@
-class UrlShortenersController < ApplicationController
+class UrlsController < ApplicationController
   def index
     @url = Url.new
     @ary = Url.order(:id).where(user_id: session[:id])

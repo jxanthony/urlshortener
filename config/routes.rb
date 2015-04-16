@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'users#index', as: 'login'
-  get 'home', to: 'url_shorteners#index', as: 'home'
-  get 'home/:short_url', to: "url_shorteners#show"
+  get 'home', to: 'urls#index', as: 'home'
+  get 'home/:short_url', to: "urls#show"
 
   resources :users, only: [:index, :new, :create]
   resources :urls, only: [:index, :new, :create]
