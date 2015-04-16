@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UrlShortenersController < ApplicationController
   def index
   end
 
@@ -18,9 +18,5 @@ class UserController < ApplicationController
   end
 
   def destroy
-  end
-
-  # Unofficial routes
-  def login
   end
 end

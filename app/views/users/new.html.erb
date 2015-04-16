@@ -1,0 +1,16 @@
+<div class="container">
+	<br>
+	<h1 for="LoginForm">Please Sign Up</h1>
+	<br>
+	<%= form_for @user do |f| %>
+		<div class="form-group">
+		<%= f.label :email, "Email:" %>
+		<%= f.email_field :email, class: "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.label :email, "Password:" %>
+		<%= f.password_field :password, class: "form-control" %>
+		</div>
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+	<% end %>
+</div>
