@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'users#index', as: 'login'
   get 'home', to: 'url_shorteners#index', as: 'home'
-  post 'home', to: 'url_shorteners#create'
   get 'home/:short_url', to: "url_shorteners#show"
 
   resources :users, only: [:index, :new, :create]
+  resources :urls, only: [:index, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

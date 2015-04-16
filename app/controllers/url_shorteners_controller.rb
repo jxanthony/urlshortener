@@ -1,5 +1,7 @@
 class UrlShortenersController < ApplicationController
   def index
+    @url = Url.new
+    @ary = Url.order(:id).where(user_id: session[:id])
   end
 
   def show
