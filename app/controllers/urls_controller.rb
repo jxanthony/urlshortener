@@ -1,24 +1,33 @@
 class UrlsController < ApplicationController
-  def index
-    @url = Url.new
-    @ary = Url.order(:id).where(user_id: session[:id])
-  end
+	protect_from_forgery with: :exception
+	include SessionsHelper
+	before_action :redirect_unless_login
 
-  def show
-  end
+	def index
+		@url = Url.new
+		@ary = Url.order(:id).where(user_id: session[:id])
+	end
 
-  def new
-  end
+	def show
+	end
 
-  def create
-  end
+	def new
+	end
 
-  def edit
-  end
+	def create
+	end
 
-  def update
-  end
+	def edit
+	end
 
-  def destroy
-  end
+	def update
+	end
+
+	def destroy
+	end
+
+	private
+		def redirect_unless_login
+			redirect_to root_path unless logged_in?
+		end
 end

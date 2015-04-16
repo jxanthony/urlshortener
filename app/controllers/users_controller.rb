@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	include SessionsHelper
+
 	def index
 	end
 
@@ -10,13 +12,13 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		ret = User.create(user_params)
+		user = User.create(user_params)
 		if ret.nil?
 			session[:message] = "Oh dear! Something went wrong. Please try again later."
 			session[:message_type] = "danger"
 			redirect_to login_path
 		end
-		session[:id] = ret.id
+		log_in(user)
 		session[:message] = "Sign Up Successful"
 		session[:message_type] = "success"
 		redirect_to home_path
