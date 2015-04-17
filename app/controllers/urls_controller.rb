@@ -10,10 +10,11 @@ class UrlsController < ApplicationController
 
 	def show
 		url = Url.find_by(short_url: params[:short_url], user_id: current_user.id)
-		byebug
 		if url.nil?
 			long_url = home_path
 		else
+			url.click_count += 1
+			url.save
 			long_url = url.long_url.to_s
 		end
 		redirect_to long_url
