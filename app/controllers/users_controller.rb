@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
 	def create
 		user = User.create(user_params)
-		if ret.nil?
+		if user.nil?
 			session[:message] = "Oh dear! Something went wrong. Please try again later."
 			session[:message_type] = "danger"
 			redirect_to login_path

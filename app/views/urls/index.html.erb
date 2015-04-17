@@ -1,4 +1,8 @@
 <div class="container">
+	<p class="navbar-text navbar-right">Signed in as <%= current_user.email %></a> |
+		<%= link_to "Log out", logout_path, method: "delete" %>
+	</p>
+	<p class="navbar-text navbar-right"></p>
 	<br>
 	<br>
 	<%= form_for @url, html: {class: "form-horizontal"} do |f| %>
