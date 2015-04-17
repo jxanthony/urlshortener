@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'home', to: 'urls#index', as: 'home'
   get 'home/:short_url', to: "urls#show"
 
-  resources :users, only: [:index, :new, :create]
+  resources :users, only: [:new, :create]
   resources :urls, only: [:index, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
