@@ -9,6 +9,14 @@ class UrlsController < ApplicationController
 	end
 
 	def show
+		url = Url.find_by(short_url: params[:short_url], user_id: current_user.id)
+		byebug
+		if url.nil?
+			long_url = home_path
+		else
+			long_url = url.long_url.to_s
+		end
+		redirect_to long_url
 	end
 
 	def new
@@ -16,9 +24,12 @@ class UrlsController < ApplicationController
 
 	def create
 		last_url = Url.last
-		id = last_url.nil? ? 0 : last_url.id
-		id += 1
-		params[:url].merge!({short_url: id, user_id: current_user.id})
+		if last_url.nil?
+			id = 0
+		else
+			id = last_url.id + 1
+		end
+		params[:url].merge!({short_url: id.to_s, user_id: current_user.id})
 		url = Url.create(url_params)
 		redirect_to home_path
 	end

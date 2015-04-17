@@ -31,7 +31,7 @@
 			<% @ary.each do |row| %>
 				<tr>
 					<td>
-					<%= row.id.to_s %>
+					<%= row.short_url.to_s %>
 					</td>
 					<td>
 						<a href=<%= row.long_url.to_s %>><%= row.long_url.to_s %></a>
