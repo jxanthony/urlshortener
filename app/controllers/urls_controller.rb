@@ -9,7 +9,7 @@ class UrlsController < ApplicationController
 	end
 
 	def show
-		url = Url.find_by(short_url: params[:short_url], user_id: current_user.id)
+		url = current_user.urls.find_by(short_url: params[:short_url])
 		if url.nil?
 			long_url = home_path
 		else
