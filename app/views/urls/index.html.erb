@@ -9,7 +9,7 @@
 		<div class="form-group">
 			<%= f.label :long_url, "Shrink New Url: ", class: "col-sm-2 control-label" %>
 			<div class="col-sm-10">
-			<%= f.url_field :long_url, class: "form-control", placeholder: "http://www.google.com" %>
+			<%= f.url_field :long_url, class: "form-control", placeholder: "https://www.yammer.com/" %>
 			</div>
 		</div>
 		<div class="form-group">
@@ -23,9 +23,9 @@
 	<br>
 	<table class="table table-hover">
 		<tr>
-			<td> Shorten ID </td>
+			<td> Shortened ID </td>
 			<td> URL </td>
-			<td> Clicked Count </td>
+			<td> Click Count </td>
 		</tr>
 		<% unless @ary.nil? %>
 			<% @ary.each do |row| %>

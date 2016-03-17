@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   get 'home', to: 'urls#index', as: 'home'
-  get 'home/:short_url', to: "urls#show"
+  get '/:short_url', to: "urls#show"
 
   resources :users, only: [:new, :create]
   resources :urls, only: [:index, :new, :create]

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'shortener'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SASS for enhanced CSS
@@ -44,7 +44,7 @@ group :development, :test do
 	# Include Guard for guarding
 	gem 'guard'
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-	gem 'spring'
+	gem 'spring', '1.6.4'
 end
 
 group :test do
@@ -55,7 +55,7 @@ end
 
 group :production do
 	# Use PostgresSQL server for Heroku Deployment
-	gem 'pg'
+	#gem 'pg'
 	# Prepare for Heroku Deployment
 	gem 'rails_12factor'
 end
