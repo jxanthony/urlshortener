@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'shortener'
+#gem 'shortener'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SASS for enhanced CSS

@@ -171,8 +171,6 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     shellany (0.0.1)
-    shortener (0.5.5)
-      rails (>= 3.0.7)
     slop (3.6.0)
     spring (1.6.4)
     sprockets (3.0.1)
@@ -218,7 +216,6 @@ DEPENDENCIES
   sass
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shortener
   spring (= 1.6.4)
   sqlite3
   turbolinks
