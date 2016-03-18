@@ -33,6 +33,7 @@ class UrlsController < ApplicationController
 		params[:url].merge!({short_url: id.to_s, user_id: current_user.id})
 		url = Url.create(url_params)
 		redirect_to home_path
+
 	end
 
 	def edit
